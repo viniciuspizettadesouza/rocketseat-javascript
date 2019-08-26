@@ -4,33 +4,21 @@
   </head>
   <body>
     <script>
-      function retornaSexo(sexo) {
-        // M,F
-        if (sexo === "M") {
-          return "Masculino";
-        } else if (sexo == "F") {
-          return "Feminino";
-        } else {
-          return "Outro";
-        }
+      // AND, OR, NOT
+
+      var sexo = "M";
+
+      if (sexo === "M") {
+        var masculino = true;
+      } else {
+        var masculino = false;
       }
+      console.log(masculino)
 
-      var resultado = retornaSexo("M");
-      console.log(resultado);
+      masculino = sexo !== "M";
 
-      function retornaSexoSwitch(sexo) {
-        switch (sexo) {
-          case "M":
-            return "Masculino";
-          case "F":
-            return "Feminino";
-          default:
-            return "Outro";
-        }
-      }
+      console.log(masculino)
 
-      var resultado2 = retornaSexoSwitch("M");
-      console.log(resultado2);
     </script>
   </body>
 </html>
