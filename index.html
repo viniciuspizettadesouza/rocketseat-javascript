@@ -1,18 +1,16 @@
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>Curso Javascript</title>
   </head>
   <body>
+    <div id="app">
+      <input onkeypress="mostraAlerta()"/>
+    </div>
     <script>
-      function exibeAlgo() {
-        console.log("Hello World");
+      function mostraAlerta() {
+        alert('Botão foi clicado');
       }
-
-      //    fica executando código a cada segundo
-      //    setInterval(exibeAlgo, 1000);
-
-      //    executa código após 5 segundo
-      setTimeout(exibeAlgo, 5000);
     </script>
   </body>
 </html>
