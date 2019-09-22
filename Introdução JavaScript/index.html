@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Curso Javascript</title>
+  </head>
+  <body>
+    <script>
+      function exercicio1() {
+        var endereco = {
+          rua: "Rua dos pinheiros",
+          numero: 1293,
+          bairro: "Centro",
+          cidade: "São Paulo",
+          uf: "SP"
+        };
+        console.log(
+          "O usuário mora em",
+          endereco.cidade,
+          "/",
+          endereco.uf,
+          ", no bairro",
+          endereco.bairro,
+          "na rua",
+          endereco.rua,
+          "com nº",
+          endereco.numero + "."
+        );
+      }
+      exercicio1();
+
+      function exercicio2(x, y) {
+        let pares = "";
+        for (let i = x; i < y; i++) {
+          if (i % 2 === 0) {
+            pares = pares + i + ", ";
+          }
+        }
+        console.log("Pares entre", x, "e", y, ":", pares);
+      }
+      exercicio2(32, 321);
+    </script>
+  </body>
+</html>
