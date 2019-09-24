@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manipulando a DOM</title>
+  </head>
+  <body>
+    <div id="app">
+      <button class="botao">
+        Adiciona Quadrado
+      </button>
+      <div class="box"></div>
+      <ul class="itens"></ul>
+      <input type="text" id="nome" />
+      <button onclick="adicionar()">Adicionar</button>
+    </div>
+
+    <script>
+      // -------------------- 1º exercício --------------------
+      var btnElement = document.querySelector("button.botao");
+
+      btnElement.onclick = function criarQuadrado() {
+        var boxElement = document.createElement("box");
+
+        boxElement.style.width = "100px";
+        boxElement.style.height = "100px";
+        boxElement.style.backgroundColor = "#f00";
+        boxElement.style.float = "left";
+        console.log(boxElement);
+        document.querySelector(".box").appendChild(boxElement);
+
+        // -------------------- 2º exercício --------------------
+        boxElement.onmouseover = function trocaCorQuadrado() {
+          function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            boxElement.style.backgroundColor = color;
+          }
+          var newColor = getRandomColor(); // #E943F0
+        };
+      };
+
+      // -------------------- 3º exercício --------------------
+
+      function preencheLista() {
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+        for (const nome of nomes) {
+          adicionaItem(nome);
+        }
+
+        function adicionaItem(nome) {
+          var elementoFilho = document.createElement("li");
+          var textoDoFilho = document.createTextNode(nome);
+          elementoFilho.appendChild(textoDoFilho);
+          document.querySelector(".itens").appendChild(elementoFilho);
+        }
+      }
+      preencheLista();
+
+      // -------------------- 4º exercício --------------------
+      function adicionar() {
+        var inputNewName = document.getElementById("nome");
+
+        adicionaItem(inputNewName.value);
+        console.log(inputNewName.value);
+
+        function adicionaItem(nome) {
+          var elementoFilho = document.createElement("li");
+          var textoDoFilho = document.createTextNode(nome);
+          elementoFilho.appendChild(textoDoFilho);
+          document.querySelector(".itens").appendChild(elementoFilho);
+        }
+        inputNewName.value = "";
+      }
+    </script>
+  </body>
+</html>
